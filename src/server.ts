@@ -19,6 +19,10 @@ const launch = async () => {
 
   useDiscordAuth(app, 'http://localhost:5050', 'http://localhost:3000')
 
+  app.get('/', (req, res) => {
+    res.send({ hello: 'World' })
+  })
+
   app.get(
     '/me',
     (req, res, next) => {
